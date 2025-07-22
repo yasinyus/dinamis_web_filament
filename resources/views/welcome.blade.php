@@ -62,30 +62,18 @@
     <div class="container">
       <h2 class="mb-4 text-center">Kategori Produk</h2>
       <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card category-card">
-            <img src="https://source.unsplash.com/400x300/?fashion" class="card-img-top" alt="Fashion">
-            <div class="card-body text-center">
-              <h5 class="card-title">Fashion</h5>
+
+        @foreach($category as $cat) 
+            <div class="col-md-4">
+              <div class="card category-card">
+                <div class="card-body text-center">
+                  <h5 class="card-title">{{ $cat->name }}</h5>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card category-card">
-            <img src="https://source.unsplash.com/400x300/?electronics" class="card-img-top" alt="Elektronik">
-            <div class="card-body text-center">
-              <h5 class="card-title">Elektronik</h5>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card category-card">
-            <img src="https://source.unsplash.com/400x300/?food" class="card-img-top" alt="Makanan">
-            <div class="card-body text-center">
-              <h5 class="card-title">Makanan</h5>
-            </div>
-          </div>
-        </div>
+        @endforeach
+       
+       
       </div>
     </div>
   </section>
@@ -95,46 +83,20 @@
     <div class="container">
       <h2 class="mb-4 text-center">Produk Terbaru</h2>
       <div class="row g-4">
-        <div class="col-md-3">
-          <div class="card product-card">
-            <img src="https://source.unsplash.com/400x400/?shoes" class="card-img-top" alt="Produk 1">
-            <div class="card-body">
-              <h5 class="card-title">Sepatu Sneakers</h5>
-              <p class="card-text">Rp 250.000</p>
-              <a href="#" class="btn btn-outline-primary w-100">Beli Sekarang</a>
+        @foreach ($products as $prod)
+           <div class="col-md-3">
+              <div class="card product-card">
+                <img src="{{ asset('storage/'.$prod->product_image) }}" class="card-img-top" alt="Produk 1">
+                <div class="card-body">
+                  <h5 class="card-title">{{ $prod->product_name }}</h5>
+                  <p class="card-text">Rp {{ $prod->price }}</p>
+                  <a href="#" class="btn btn-outline-primary w-100">Beli Sekarang</a>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card product-card">
-            <img src="https://source.unsplash.com/400x400/?headphones" class="card-img-top" alt="Produk 2">
-            <div class="card-body">
-              <h5 class="card-title">Headphone Wireless</h5>
-              <p class="card-text">Rp 500.000</p>
-              <a href="#" class="btn btn-outline-primary w-100">Beli Sekarang</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card product-card">
-            <img src="https://source.unsplash.com/400x400/?snack" class="card-img-top" alt="Produk 3">
-            <div class="card-body">
-              <h5 class="card-title">Snack Kekinian</h5>
-              <p class="card-text">Rp 30.000</p>
-              <a href="#" class="btn btn-outline-primary w-100">Beli Sekarang</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card product-card">
-            <img src="https://source.unsplash.com/400x400/?watch" class="card-img-top" alt="Produk 4">
-            <div class="card-body">
-              <h5 class="card-title">Jam Tangan Stylish</h5>
-              <p class="card-text">Rp 750.000</p>
-              <a href="#" class="btn btn-outline-primary w-100">Beli Sekarang</a>
-            </div>
-          </div>
-        </div>
+        @endforeach
+       
+       
       </div>
     </div>
   </section>
