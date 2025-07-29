@@ -10,6 +10,7 @@ class Setting extends Model
         'app_name',
         'title',
         'logo_image',
+        'banner_image',
         'banner_content',
         'footer_content',
         'footer',

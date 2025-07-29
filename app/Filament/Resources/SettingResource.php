@@ -33,6 +33,13 @@ class SettingResource extends Resource
                             ->required(),
 
                         //grid
+
+                        //Banner image
+                        Forms\Components\FileUpload::make('banner_image')
+                            ->label('Banner Image')
+                            ->required(),
+
+                        //grid
                         Forms\Components\Grid::make(4)
                         ->schema([
 
@@ -86,6 +93,7 @@ class SettingResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\ImageColumn::make('logo_image')->circular(),
+                Tables\Columns\ImageColumn::make('banner_image'),
                 Tables\Columns\TextColumn::make('app_name'),
                 Tables\Columns\TextColumn::make('title'),
                 Tables\Columns\TextColumn::make('banner_content'),
